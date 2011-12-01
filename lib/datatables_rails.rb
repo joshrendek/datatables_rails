@@ -3,9 +3,9 @@ module DatatablesRails
         class << self
          def javascript(id, opts, source, cols)
             dt_opts = []
-            dt_opts << "'bProcessing': true" if opts.has_key?('processing')
-            dt_opts << "'bJQueryUI': true" if opts.has_key?('jqueryui')
-            dt_opts << "'bPaginate': true" if opts.has_key?('paginate')
+            dt_opts << "'bProcessing': true" if opts[:process]
+            dt_opts << "'bJQueryUI': true" if opts[:jqueryui]
+            dt_opts << "'bPaginate': true" if opts[:paginate]
             dt_opts << "'sAjaxSource': '#{source}'"
             columns = []
             cols.each do |col|

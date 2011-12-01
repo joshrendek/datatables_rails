@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'datatables_rails'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.date = '2011-12-01'
   s.summary = 'A wrapper around datatables to return the proper JSON datastructures and output html'
   s.description = 'A wrapper around datatables to return the proper JSON datastructures and output html'
