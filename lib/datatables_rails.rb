@@ -1,11 +1,21 @@
 module DatatablesRails
     module Out
+        CUSTOM_MAPPINGS = {:process => "bProcessing", :jqueryui => "bJQueryUI", :paginate => "bPaginate",
+                           :autowidth => "bAutoWidth", :defer_render => "bDeferRender",
+                           :destroy => "bDestroy", :filter => "bFilter", :info => "bInfo", 
+                           :length_change => "bLengthChange", :retrieve => "bRetrieve", 
+                           :scroll_collapse => "bScrollCollapse", :scroll_infinite => "bScrollInfinite",
+                           :searchable => "bSearchable", :server_side => "bServerSide", 
+                           :sort => "bSort", :sortable => "bSortable", :sort_cells_top => "bSortCellsTop",
+                           :sort_classes => "bSortClasses", :state_save => "bStateSave", 
+                           :use_rendered => "bUseRendered", :visible => "bVisible"                           
+        }
         class << self
          def javascript(id, opts, source, cols)
             dt_opts = []
-            dt_opts << "'bProcessing': true" if opts[:process]
-            dt_opts << "'bJQueryUI': true" if opts[:jqueryui]
-            dt_opts << "'bPaginate': true" if opts[:paginate]
+            opts.each do |k,v|
+              dt_opts << "'#{CUSTOM_MAPPINGS[k]}':true" if v
+            end
             dt_opts << "'sAjaxSource': '#{source}'"
             columns = []
             cols.each do |col|
