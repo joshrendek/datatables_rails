@@ -13,6 +13,9 @@
         u['edit'] = "<a href='#{edit_user_path(u['id'])}'>Edit</a>"
     end
 
+# Building it
+    gem build datatables_rails.gemspec
+
 # Forking it
 Feel free to fork this and make any additions, just make sure to run the tests.
 
