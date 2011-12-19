@@ -26,7 +26,7 @@ module DatatablesRails
             html = []
             html << "<script>"
             html << "$(document).ready(function()  { "
-            html << "var #{id} = $('##{id}').dataTable( { #{dt_opts.join(',')} } );"
+            html << "var #{id}_o = $('##{id}').dataTable( { #{dt_opts.join(',')} } );"
             html << "});"
             html << "</script>"
             return html.join
