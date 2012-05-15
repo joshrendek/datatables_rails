@@ -19,7 +19,7 @@ The best way to do this is just build contiously ontop of an AR relation/object.
 
     Fields = ["fields", "you", "want", "to", "display"]
     page = 1
-    page = params[:iDisplayStart].to_i/10+1 if params[:iDisplayStart]
+    page = params[:iDisplayStart].to_i/params[:iDisplayLength].to_i+1 if params[:iDisplayStart]
     e = ModelName
     total_record_size = 0
     display_length = 10
